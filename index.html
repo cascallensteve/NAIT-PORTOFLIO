@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network of Adventist in Technology | NAIT</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  
+
+
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "7PsZQs7Ox1Qg9qyRH",
+      });
+   })();
+</script>
+<script src="email.js"></script>
+
+<!-- emailjs script -->
+
+  <style>
+     /* Create the circles */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: moveCircle 10s infinite;
+  }
+
+  /* Different sizes for the circles */
+  .circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 15%;
+    background-color: rgba(0, 123, 255, 0.5);
+    animation-delay: 0s;
+  }
+
+  .circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: 60%;
+    background-color: rgba(0, 123, 255, 0.4);
+    animation-delay: 2s;
+  }
+
+  .circle-3 {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 10%;
+    background-color: rgba(0, 123, 255, 0.3);
+    animation-delay: 4s;
+  }
+
+  .circle-4 {
+    width: 100px;
+    height: 100px;
+    top: 60%;
+    left: 80%;
+    background-color: rgba(0, 123, 255, 0.6);
+    animation-delay: 6s;
+  }
+
+  .circle-5 {
+    width: 140px;
+    height: 140px;
+    top: 20%;
+    left: 80%;
+    background-color: rgba(0, 123, 255, 0.5);
+    animation-delay: 8s;
+  }
+
+  /* Animation for moving the circles */
+  @keyframes moveCircle {
+    0% {
+      transform: scale(1) translateY(0) translateX(0);
+    }
+    50% {
+      transform: scale(1.5) translateY(-20px) translateX(20px);
+    }
+    100% {
+      transform: scale(1) translateY(0) translateX(0);
+    }
+  }
+      /* Keyframe animation for fly-in */
+  @keyframes flyIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Start below the view */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End in original position */
+    }
+  }
+
+  /* Apply the animation only to elements with both hero-text and animate-fly-in classes */
+  .hero-text.animate-fly-in {
+    animation: flyIn 1s ease-out forwards;
+  }
+  
+    h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+     /* Keyframes for the animation */
+     @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Animation class */
+        .animate-slide-in {
+            animation: slideIn 2s ease-out forwards;
+        }
+    /* hero section  starts  */
+
+/* Hero Section Styling */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  animation: changeBackground 12s infinite; /* Changes background every 3 seconds */
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-text {
+  font-size: 2em;
+  margin-top: 20%;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 2s forwards 0.5s; /* Hero text fades in after 0.5 seconds */
+  
+  /* Gradient Text Styling */
+  font-weight: bold;
+  background: linear-gradient(45deg, #56cf06, #f0efee); /* Gold to Dark Blue Gradient */
+  -webkit-background-clip: text; /* Ensures the gradient applies only to the text */
+  color: transparent; /* Makes the text transparent so the gradient shows through */
+  margin-bottom: 20px;
+}
+
+
+
+.hero-subtext {
+  font-size: 1.5em;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s; /* Subtext fades in after 1 second */
+}
+
+/* Hero Statements Styling */
+.hero-statements {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+}
+
+.statement {
+  opacity: 0;
+  font-size: 1.5em;
+  margin: 20px 0;
+  padding: 13px;
+  transition: opacity 1s ease-in-out;
+}
+
+.statement.right {
+  animation: slideFromRight 2s forwards;
+}
+
+.statement.left {
+  animation: slideFromLeft 6s forwards;
+}
+
+/* Animation for Background Change */
+@keyframes changeBackground {
+  0% {
+    background-image: url('./images/tech.jpg');
+  }
+  33% {
+    background-image: url('./images/back.jpg');
+  }
+  66% {
+    background-image: url('./images/bak2.jpg');
+  }
+  100% {
+    background-image: url('./images/back.jpg');
+  }
+}
+
+/* Fade-in Effect for Text */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in from Right */
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-in from Left */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation Delays for the Statements */
+.statement.right:nth-of-type(1) {
+  animation-delay: 3s;
+}
+.statement.left:nth-of-type(2) {
+  animation-delay: 4s;
+}
+.statement.right:nth-of-type(3) {
+  animation-delay: 5s;
+}
+.statement.left:nth-of-type(4) {
+  animation-delay: 6s;
+}
+
+    /* end of hero section */
+
+     /* about us section styling */
+    /* Adding smooth transitions for fade-in effect */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+    .visible {
+      opacity: 1;
+    }
+    /* end of about us section */
+/* brief history section :start */
+
+/* Brief History Section Styling */
+.history-section {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 50px 20px;
+  color: #333;
+  text-align: center;
+  background-image: url('./images/history-bg.jpg'); /* Optional: Background image */
+  background-size: cover;
+  background-position: center;
+}
+
+.history-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.history-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff; /* Blue color for the title */
+  margin-bottom: 20px;
+}
+
+.history-content {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .history-title {
+    font-size: 2em;
+  }
+
+  .history-content {
+    font-size: 1em;
+  }
+}
+
+/* brief history section ends */
+    html {
+  scroll-behavior: smooth;
+}
+
+    /* Custom underline animation */
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #FFD700;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #FFD700;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile Menu Styles */
+    @media (max-width: 767px) {
+      #menu {
+        display: none;
+      }
+
+      #menu-btn {
+        display: block;
+      }
+
+      #mobile-menu {
+        display: none;
+        background: linear-gradient(to bottom, #2c3e50, #34495e);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(37, 7, 7, 0.1);
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      #mobile-menu.show {
+        display: block;
+      }
+
+      .nav-link {
+        padding: 12px;
+        border-radius: 4px;
+      }
+
+      .nav-link:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+      }
+    }
+
+    /* Hide the menu for larger screens */
+    @media (min-width: 768px) {
+      #menu {
+        display: flex;
+      }
+
+      #menu-btn {
+        display: none;
+      }
+
+      #mobile-menu {
+        display: none;
+      }
+    }
+
+    footer {
+  position: relative; /* Required for positioning the pseudo-element */
+  z-index: 1; /* Makes sure content is above the pseudo-element */
+  overflow: hidden; /* Ensures the background does not spill outside */
+}
+
+footer::after {
+  content: ''; /* Adds an empty content for the pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./images/bak2.jpg);
+  background-size: cover; /* Use cover for better full coverage */
+  background-position: 0 0; /* Start from the top-left corner */
+  opacity: 0.2; /* Adjust opacity (0.0 to 1.0) */
+  z-index: -1; /* Places the pseudo-element behind the footer content */
+  animation: moveBackground 10s infinite linear; /* Animation to move the background */
+}
+
+/* Define the keyframes for the animation */
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0; /* Start at the top-left corner */
+  }
+  50% {
+    background-position: 100% 0; /* Move to the right */
+  }
+  100% {
+    background-position: 0 0; /* Reset to the starting position */
+  }
+}
+ /* Add a background animation with coding symbols */
+ @keyframes codeAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+  .code-background {
+    background: linear-gradient(45deg, #00f, #0ff, #f00, #ff0, #0f0, #f0f);
+    background-size: 400% 400%;
+    animation: codeAnimation 5s linear infinite;
+    background-attachment: fixed;
+ 
+ /* Style for social media icons */
+.follow-us a {
+  color: #333; /* Initial color */
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.follow-us a:hover {
+  color: gold; /* Color on hover */
+}
+.moving-arrow {
+      animation: moveArrow 2s infinite;
+    }
+
+    @keyframes moveArrow {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body class="bg-gray-800 text-white">
+
+  
+  <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition duration-300">
+
+    <!-- Navbar Section -->
+    <nav class="bg-blue-900 dark:bg-gray-800 py-3 fixed top-0 left-0 w-full z-50">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        
+        <!-- Logo and Tagline -->
+        <div class="flex items-center space-x-3">
+          <img src="./images/logo (1).png" alt="Logo" class="h-10">
+          <div>
+            <h1 class="text-white font-semibold bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent">
+            NAIT
+            </h1>
+            <p class="text-white text-sm italic">Leveraging Technology in our churches</p>
+          </div>
+        </div>
+    
+        <!-- Dark Mode Toggle Button -->
+        <button id="theme-toggle" class="text-white focus:outline-none ml-auto sm:ml-4">
+          <i id="theme-icon" class="fas fa-sun text-xl"></i>
+        </button>
+    
+        <!-- Mobile Menu Button -->
+        <div class="sm:hidden ml-4">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+    
+        <!-- Navigation Links (Desktop) -->
+        <div id="menu" class="hidden sm:flex space-x-6 text-white font-semibold">
+          <a href="" class="nav-link">HOME</a>
+          <a href="#historySection" class="nav-link">About Us</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact Us</a>
+          <a href="#our team" class="nav-link">Our Team</a>
+    
+          <a href="#" class="nav-link bg-yellow-400 px-4 py-1 rounded-full text-blue-600">Support Us</a>
+        </div>
+      </div>
+    
+      <!-- Mobile Navigation (hidden by default) -->
+      <div id="mobile-menu" class="sm:hidden hidden w-full mt-4 bg-blue-900 dark:bg-gray-800">
+        <div class="flex flex-col space-y-4 text-white p-4">
+          <a href="#" class="nav-link">HOME</a>
+          <a href="#historySection" class="nav-link">About Us</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact Us</a>
+          <a href="#our team" class="nav-link">Our Team</a>
+          
+          <a href="#" class="nav-link bg-yellow-400 px-4 py-1 rounded-full text-blue-600">Support Us</a>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Main Content Padding -->
+    <div class="pt-32">
+      <!-- Your main content here -->
+    </div>
+    
+    <!-- JavaScript for Hamburger Menu and Dark Mode Toggle -->
+    <script>
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const body = document.body;
+    
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        // Update icon based on theme
+        if (body.classList.contains('dark')) {
+          themeIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+          themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+      });
+    
+      // Hamburger Menu Toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+    
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+
+
+
+<!-- network of adventist in Tech
+  -->
+  <section class="text-center p-4">
+    <h1 class="text-4xl font-bold animate-slide-in" 
+    style="
+      font-family: 'Roboto', sans-serif;
+      color: #ffffff; /* Ensures white text */
+      text-shadow: 4px 4px 4px rgba(10, 178, 235, 0.5); /* Adds shadow effect */
+    ">
+    NETWORK OF ADVENTIST IN TECH
+</h1>
+
+    </h1>
+</section>
+
+
+
+<!-- end ot nait -->
+<!-- Hero Section with Background and Animated Text -->
+<!-- Hero Section with Background and Animated Text -->
+<div class="hero-section flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-blue-800 text-white">
+  <div class="hero-text text-center">
+    <p class="text-5xl font-bold">Building a stable community</p>
+    <p class="text-3xl font-semibold mt-2">offering software solutions</p>
+    <p class="text-xl font-medium mt-2">and furthering the cause of Christ</p>
+  </div>
+</div>
+
+<section class="bg-gray-100 py-8 px-6 text-center relative overflow-hidden">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">Join Us Today!</h2>
+    <p class="text-lg text-gray-600 mb-8">
+      Be a part of something bigger. We offer a vibrant community and exciting opportunities for growth.
+    </p>
+    <div class="flex justify-center gap-6">
+      <!-- Join Us Button -->
+      <a href="#join-us" class="inline-block bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg">
+        Join Us
+      </a>
+      <!-- Learn More Button -->
+      <a href="#learn-more" class="inline-block bg-transparent border-2 border-blue-500 text-blue-500 font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:bg-blue-500 hover:text-white hover:shadow-lg">
+        Learn More
+      </a>
+    </div>
+  </div>
+
+  <!-- Animated Circles Background -->
+  <div class="absolute top-0 left-0 w-full h-full">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+    <div class="circle circle-4"></div>
+    <div class="circle circle-5"></div>
+  </div>
+</section>
+
+ 
+  <div class="hero-statements">
+   
+
+  </div>
+</div>
+<script>
+// Play typing sound each time a character is added
+const heroText = document.getElementById('heroText');
+const heroSubtext = document.getElementById('heroSubtext');
+const typingSound = new Audio('./sounds/type-sound.mp3'); // path to your sound file
+
+function playTypingSound() {
+  typingSound.play();
+}
+
+// Typing effect for hero text
+function typeText(element, text, delay) {
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index < text.length) {
+      element.innerText += text[index];
+      playTypingSound(); // Play typing sound
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 150); // Adjust the speed of typing (150 ms per letter)
+}
+
+// Call the function to type the text with a delay
+window.onload = () => {
+  setTimeout(() => typeText(heroText, 'We Are Nait', 0), 0);
+  setTimeout(() => typeText(heroSubtext, 'Join Us ', 0), 3500); // Delay for subtext
+};
+</script>
+
+<!-- about us section starts  -->
+ <!-- Brief History Section -->
+<section class="history-section" id="historySection">
+  <div class="history-container">
+    <h2 class="history-title">Our Brief History</h2>
+    <p class="history-content">
+      The Network of Adventists in Technology (NAIT) began as a vision to bring together like-minded individuals who
+      share a passion for both faith and innovation. With a commitment to advancing technology in a way that aligns
+      with the principles of the Seventh-day Adventist Church, we’ve fostered a community of professionals and
+      enthusiasts who are dedicated to creating impactful solutions through technology.
+    </p>
+    <p class="history-content">
+     
+    </p>
+    <p class="history-content">
+      As we look to the future, our goal is to continue bridging the gap between technology and faith, fostering a
+      community that thrives on innovation, integrity, and service to others.
+    </p>
+  </div>
+</section>
+
+ <!-- Brief history ends -->
+  <!-- Short Description -->
+<!-- Mission and Vision Section -->
+<section id="mission-vision" class="my-12">
+  <h3 class="text-3xl font-semibold text-center mb-6" style="color: #b08d57;">Our Mission & Vision</h3>
+  <div class="flex flex-col md:flex-row gap-8">
+    <div class="bg-white p-4 shadow-lg rounded-lg w-full md:w-1/2 text-gray-800 transition transform hover:scale-105 hover:shadow-2xl duration-300">
+      <h4 class="text-2xl font-semibold mb-2">Mission</h4>
+      <p class="text-sm">To leverage the technological skills of adventist professional to supporting the global mission of the Seventh day Adventist Church.
+      </p>
+    </div>
+    <div class="bg-white p-4 shadow-lg rounded-lg w-full md:w-1/2 text-gray-800 transition transform hover:scale-105 hover:shadow-2xl duration-300">
+      <h4 class="text-2xl font-semibold mb-2">Vision</h4>
+      <p class="text-sm"> To be a network of Adventist tech professionals, dedicated to leveraging their talents and professional skills to realise the global vision of the Adventist church..</p>
+    </div>
+  </div>
+</section>
+
+<!-- about us section ends -->
+<!-- Team Section Starts -->
+<section id="our team"></section>
+<section class="bg-blue-1000 py-16">
+  <div class="container mx-auto text-center">
+    <button class="text-3xl font-bold text-gray-800 bg-white px-6 py-3 mb-10 rounded-full border-4 border-green-700 hover:bg-green-700 hover:text-white transition">
+      Meet Our Team
+    </button>
+    
+    <!-- Team Members Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Team Member 1 -->
+      <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+        <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+          <img src="./images/rono1.png" alt="Team Member 1" class="w-full max-h-48 object-contain">
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold text-white-800">Emmanuel Rono</h3>
+          <p class="text-gray-1000">Chairperson</p>
+        </div>
+        <!-- Social Links -->
+        <div class="p-4 flex justify-center space-x-4">
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <!-- Quotation -->
+        <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"Leadership is not about being in charge. It's about taking care of those in your charge."</p>
+      </div>
+       <!-- Team Member 2 -->
+       <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+        <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+          <img src="./images/steve1.png" alt="Team Member 1" class="w-full max-h-48 object-contain">
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold text-white-800">Steve Cascallen</h3>
+          <p class="text-gray-1000">Organizing Secretary </p>
+        </div>
+        <!-- Social Links -->
+        <div class="p-4 flex justify-center space-x-4">
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <!-- Quotation -->
+        <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successfu"</p>
+      </div>
+ <!-- Team Member 1 -->
+ <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+  <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+    <img src="./images/Bildad.webp" alt="Team Member 1" class="w-full max-h-48 object-contain">
+  </div>
+  <div class="p-4 text-center">
+    <h3 class="text-xl font-semibold text-white-800">Bildad Rono</h3>
+    <p class="text-gray-1000">Brand Ambassodor</p>
+  </div>
+  <!-- Social Links -->
+  <div class="p-4 flex justify-center space-x-4">
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <!-- Quotation -->
+  <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"The only way to achieve the impossible is to believe it is possible."</p>
+</div>
+ <!-- Team Member 1 -->
+ <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+  <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+    <img src="./images/BILL.webp" alt="Team Member 1" class="w-full max-h-48 object-contain">
+  </div>
+  <div class="p-4 text-center">
+    <h3 class="text-xl font-semibold text-white-800">Billy Josiah</h3>
+    <p class="text-gray-1000">Organizing Secretary </p>
+  </div>
+  <!-- Social Links -->
+  <div class="p-4 flex justify-center space-x-4">
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <!-- Quotation -->
+  <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"In the middle of every difficulty lies opportunity"</p>
+</div>
+
+  
+<!-- Team members SECTION 2 -->
+       <!-- Team Member 1 -->
+       <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+        <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+          <img src="./images/Omingo1.png" alt="Team Member 1" class="w-full max-h-48 object-contain">
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold text-white-800">Omingo Vincent</h3>
+          <p class="text-gray-1000">Communication </p>
+        </div>
+        <!-- Social Links -->
+        <div class="p-4 flex justify-center space-x-4">
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <!-- Quotation -->
+        <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"Teamwork makes the dream work, but a vision becomes a nightmare when the leader has a big dream and a bad team."</p>
+      </div>
+       <!-- Team Member 2 -->
+       <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+        <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+          <img src="./images/avatar.avif" alt="Team Member 1" class="w-full max-h-48 object-contain">
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold text-white-800">Edwin Mboga</h3>
+          <p class="text-gray-1000">Legal Advisor </p>
+        </div>
+        <!-- Social Links -->
+        <div class="p-4 flex justify-center space-x-4">
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <!-- Quotation -->
+        <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"Don't watch the clock; do what it does. Keep going."</p>
+      </div>
+ <!-- Team Member 1 -->
+ <div class="team-member w-72 flex-shrink-0 bg-gradient-to-tr from-green-700 to-black-1000 p-1 rounded-lg shadow-lg transition transform hover:scale-110 mx-auto">
+  <div class="bg-white rounded-lg overflow-hidden flex justify-center">
+    <img src="./images/avatar.avif" alt="Team Member 1" class="w-full max-h-48 object-contain">
+  </div>
+  <div class="p-4 text-center">
+    <h3 class="text-xl font-semibold text-white-800">Peter Kamau</h3>
+    <p class="text-gray-1000">Ass Project Manager</p>
+  </div>
+  <!-- Social Links -->
+  <div class="p-4 flex justify-center space-x-4">
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <!-- Quotation -->
+  <p class="quotation bg-gradient-to-r from-darkgreen-100 to-black-800 text-white italic text-center px-4 py-2 rounded-b-lg">"Leadership is not about being in charge. It's about taking care of those in your charge."</p>
+</div>
+
+
+    <!-- Additional Team Members (Initially Hidden) -->
+
+
+
+
+
+    <div id="more-members" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 hidden">
+
+
+
+           
+      
+        
+       
+</section>
+ 
+
+<!-- Team Section Ends -->
+
+<script>
+  document.getElementById("see-more-btn").addEventListener("click", function() {
+    document.getElementById("more-members").classList.toggle("hidden");
+    this.textContent = this.textContent === "See More Quotes " ? "See Less Quotes" : "See More";
+  });
+</script>
+
+
+<!-- Include Font Awesome for social media icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <!-- projects section starts -->
+<section id="projects" class="py-20 bg-blue-900 text-white">
+    <div class="container mx-auto text-center mb-12">
+     
+      <h2 style="
+  font-size: 1.875rem; /* Equivalent to text-3xl */
+  font-weight: 800; /* Stronger font weight for a bolder appearance */
+  background-image: linear-gradient(to right, #FFD700, #FFC107, #FF8C00);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Enhanced shadow for more impact */
+  margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+">
+  Our Projects
+</h2>
+
+      </h2>
+      
+      <p class="text-lg">As a community of Adventists in Technology, we are working on several exciting projects to advance the use of technology in our churches.</p>
+    </div>
+  
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <!-- Project 1 -->
+      <div class="max-w-sm mx-auto rounded-lg shadow-lg bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 overflow-hidden transform transition duration-300 hover:scale-105">
+        <img src="./images/mission.webp" alt="Project 1" class="w-full h-48 object-cover">
+        <div class="bg-gradient-to-b from-transparent to-blue-900 p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Mission Funder App</h3>
+          <!-- Project Status Badge -->
+          <span class="inline-block bg-green-500 text-white text-sm font-semibold py-1 px-2 rounded-full mb-4">Ongoing</span>
+          <p class="text-gray-200 mb-4">This project focuses on integrating technology for efficient church management, enhancing communication, and providing digital resources to our members.</p>
+          <a href="#" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition duration-300">
+            Learn More <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Project 2 -->
+      <div class="max-w-sm mx-auto rounded-lg shadow-lg bg-gradient-to-r from-blue-400 via-black-500 to-blue-600 overflow-hidden transform transition duration-300 hover:scale-105">
+        <img src="./images/teck5.jpg" alt="Project 2" class="w-full h-48 object-cover">
+        <div class="bg-gradient-to-b from-transparent to-blue-900 p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">Book Management App</h3>
+          <!-- Project Status Badge -->
+          <span class="inline-block bg-red-500 text-white text-sm font-semibold py-1 px-2 rounded-full mb-4">Completed</span>
+          <p class="text-gray-200 mb-4">Our second project involves creating a digital platform for Adventist youth to connect, learn, and collaborate on various tech-related initiatives.</p>
+          <a href="#" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition duration-300">
+            Learn More <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Project 3 -->
+      <div class="max-w-sm mx-auto rounded-lg shadow-lg bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 overflow-hidden transform transition duration-300 hover:scale-105">
+        <img src="./images/teck 3.jpg" alt="Project 3" class="w-full h-48 object-cover">
+        <div class="bg-gradient-to-b from-transparent to-blue-900 p-6">
+          <h3 class="text-xl font-semibold text-white mb-3">E-library </h3>
+          <!-- Project Status Badge -->
+          <span class="inline-block bg-green-500 text-white text-sm font-semibold py-1 px-2 rounded-full mb-4">Ongoing</span>
+          <p class="text-gray-200 mb-4">This initiative aims to provide technical training and mentorship to church members, fostering the next generation of tech leaders in our community.</p>
+          <a href="#" class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition duration-300">
+            Learn More <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- projects section ends -->
+  
+  <!-- See More Button -->
+  <div class="text-center mt-12">
+    <a href="#more-projects" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">
+      See More <span>&rarr;</span>
+    </a>
+  </div>
+  
+  
+  <!-- projects section  ends -->
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    // Toggle mobile menu
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('show');
+    });
+
+    const images = [
+      './images/teck2.jpg',  // Replace with your first image path
+      './images/teck3.jpg',  // Replace with your second image path
+      './images/teck 3.jpg',  // Replace with your second image path
+      './images/tec'   // Replace with your third image path
+    ];
+
+    let currentImageIndex = 0;
+    const heroSection = document.getElementById('heroSection');
+
+    // Function to change background image every 3 seconds
+    setInterval(() => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      heroSection.style.backgroundImage = `url(${images[currentImageIndex]})`;
+    }, 3); // Change background every 3 seconds
+
+  </script>
+  <!-- interactive coding sections starts
+ -->
+
+
+ <!-- nait ssession interactive codinmg section end -->
+
+ <div class="flex flex-col md:flex-row items-center justify-between px-8 py-12 bg-white">
+  <!-- Left Section with the open book and circles -->
+  <div class="relative w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
+    <!-- Book icon -->
+    <div class="w-40 h-40 bg-gradient-to-r from-blue-100 to-white rounded-full relative flex items-center justify-center">
+      <svg
+      id="interactive-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-28 h-28 text-blue-400 absolute interactive-icon"
+  >
+      <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16 18l4-4m0 0l-4-4m4 4H8m-4 0l4-4m0 0L4 14m4-4H8"
+      />
+  </svg>
+  
+  <script>
+      const icon = document.getElementById('interactive-icon');
+  
+      // Variables for movement directions
+      const movements = ['translateX(100px)', 'translateY(100px)', 'translateX(-100px)', 'translateY(-100px)', 'translate(0, 0)'];
+      let currentMovement = 0;
+  
+      // Rotate the icon on hover using CSS transitions
+      icon.addEventListener('mouseover', () => {
+          icon.style.transition = 'transform 0.3s ease-in-out';
+          icon.style.transform = 'rotate(360deg)';
+      });
+  
+      icon.addEventListener('mouseout', () => {
+          icon.style.transition = 'transform 0.3s ease-in-out';
+          icon.style.transform = 'rotate(0deg)';
+      });
+  
+      // Add movement effect when clicked
+      icon.addEventListener('click', () => {
+          // Change position in a cyclic order
+          currentMovement = (currentMovement + 1) % movements.length;
+          icon.style.transition = 'transform 0.5s ease-in-out';
+          icon.style.transform = movements[currentMovement];
+      });
+  </script>
+  
+  
+
+      <!-- Blue circle -->
+      <div class="absolute w-16 h-16 border-4 border-blue-500 rounded-full top-16 left-10"></div>
+      <!-- Red circle -->
+      <div class="absolute w-10 h-10 border-4 border-red-500 rounded-full top-24 left-20"></div>
+    </div>
+  </div>
+
+  <div class="w-full md:w-2/3">
+    <!-- Tagline -->
+    <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-center rounded-lg py-4 px-6 mb-6">
+      <p id="counter" class="text-2xl font-bold">0</p> <!-- This is where the number will animate -->
+      <p class="text-sm uppercase tracking-wider">Members </p>
+      <p class="text-sm uppercase tracking-wider">Our Interactive Coding session</p>
+    </div>
+  
+    <!-- Title -->
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+      Welcome to the Network of Adventists in Tech
+    </h2>
+  
+    <!-- Description -->
+    <p class="text-gray-600 leading-relaxed mb-4">
+      We are an innovative and vibrant community dedicated to empowering individuals in the tech space through collaboration, innovation, and learning. Based on values of service and excellence, we provide a platform to explore and implement cutting-edge solutions in software development, data analytics, DevOps, and other technological fields.
+      
+      Our Interactive Coding Sessions are designed to equip participants with hands-on coding skills, problem-solving techniques, and industry best practices. Whether you're a beginner or an experienced developer, these sessions provide an inclusive environment to learn, share, and grow together.
+      
+      Join us as we connect tech enthusiasts from diverse backgrounds, fostering a culture of innovation and lifelong learning to better serve our communities with impactful technological solutions.
+    </p>
+    <p class="text-gray-600 leading-relaxed mb-4">
+    
+    </p>
+  
+    <!-- Features -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Feature 1 -->
+      <div class="flex items-center space-x-4">
+        <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+        <p class="text-gray-800">Get access to our interactive coding session</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="flex items-center space-x-4">
+        <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+        <p class="text-gray-800">Get in touch with us every thur from 1900hrs-2000hrsfor the coding session</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="flex items-center space-x-4">
+        <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+        <p class="text-gray-800">Keep in touch with us </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Function to animate the counter
+    function animateCounter() {
+      const counterElement = document.getElementById('counter');
+      let currentCount = 0;
+      const targetCount = 30; // Target count for 30 people
+      const increment = targetCount / 100; // Increment count smoothly
+      const speed = 50; // Speed in milliseconds for increment
+  
+      const interval = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= targetCount) {
+          clearInterval(interval);
+          currentCount = targetCount;
+        }
+        counterElement.textContent = Math.floor(currentCount).toLocaleString();
+      }, speed);
+    }
+  
+    // Call the animateCounter function when the page loads
+    window.onload = animateCounter;
+  </script>
+  
+  
+
+
+
+<!-- contact section starts -->
+<style>
+  /* Dark Blue Radial Gradient Background for the Body */
+  body {
+    background: radial-gradient(circle, rgba(3, 19, 46, 1) 0%, rgba(15, 32, 73, 1) 100%);
+    color: white;
+  }
+
+  /* Arrow animation */
+  @keyframes moveUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  .moving-arrow {
+    animation: moveUpDown 1s ease-in-out infinite;
+  }
+
+  /* Underline styling */
+  .underline {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FFD700;
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .underline:hover::after {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+  }
+
+  /* Beautiful form */
+  .form-input, .form-textarea {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+    background-color: #1E293B;
+    color: white;
+  }
+
+  .form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(72, 187, 120, 0.6);
+  }
+
+  /* Contact Icon Hover Effect */
+  .contact-icon {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 50%;
+  }
+
+  .contact {
+    background-color: #0D1B2A;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .contact-icon:hover {
+    background: linear-gradient(135deg, #0e193f, #3B82F6);
+    color: white;
+    transform: scale(1.2);
+  }
+
+  /* Flex Layout for Left Side Contact */
+  .contact-info {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(15, 32, 73, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Button with Down Arrow */
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .contact-btn:hover {
+    background-color: #45a049;
+  }
+
+  .contact-btn .arrow {
+    margin-left: 8px;
+    font-size: 1.5rem;
+  }
+
+  /* Contact Information Text Styling */
+  .contact-text {
+    font-size: 1.25rem;
+    color: white;
+    margin-left: 10px;
+  }
+</style>
+
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  
+ <!-- Contact Section -->
+ <section id="contact" class="py-30">
+  <div class="container mx-auto text-center">
+    <!-- Breadcrumbs -->
+    <div class="text-gray-600 mb-4">
+      <a href="#" class="text-blue-600">Home</a> &rarr; <span class="text-gray-800">Contact</span>
+    </div>
+
+    <!-- Contact Header with Underline -->
+    <h2 class="text-4xl font-semibold text-blue-900 mb-6 underline">Contact Us</h2>
+
+    <!-- Moving Arrow -->
+    <div class="text-center mb-12">
+      <span class="moving-arrow text-4xl text-yellow-400">&#8593;</span>
+    </div>
+
+    <!-- Inquiry Section -->
+    <div class="bg-white p-8 rounded-lg shadow-lg mb-12 max-w-lg mx-auto">
+      <h3 class="text-2xl font-semibold text-blue-900 mb-4">Have an Inquiry?</h3>
+      <p class="text-gray-600 mb-6">Feel free to send us any questions or inquiries you may have, and we'll get back to you as soon as possible!</p>
+    </div>
+
+    <!-- Button to Show Contact Form -->
+    <button id="showFormBtn" class="contact-btn bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300">
+      Send Us a Message
+      <span class="arrow">&#8595;</span> <!-- Down Arrow -->
+    </button>
+
+    <!-- Contact Form (Hidden Initially) -->
+    <div id="contactForm" class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto mt-8 hidden">
+      <form action="#" method="POST">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-blue-600">
+            Your Name
+          </label>
+          <input type="text" id="name" name="name" placeholder="e.g., Steve Cascalle" class="form-input italic text-gray-500" required>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-semibold text-gray-700">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="e.g., cascallensteve@gmail.com" class="form-input italic text-gray-500" required>
+        </div>
+        <div class="mb-4">
+          <label for="phone" class="block text-sm font-semibold text-gray-700">Your Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g., 079823525" class="form-input italic text-gray-500" required>
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-semibold text-gray-700">Your Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Type your message here..." class="form-textarea italic text-gray-500" required></textarea>
+        </div>
+        <button type="submit"onclick="sendMail()" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Select the button and the contact form
+  const showFormBtn = document.getElementById("showFormBtn");
+  const contactForm = document.getElementById("contactForm");
+
+  // Add an event listener to toggle the form visibility when the button is clicked
+  showFormBtn.addEventListener("click", () => {
+    // Toggle the 'hidden' class to show/hide the form
+    contactForm.classList.toggle("hidden");
+  });
+</script>
+  
+</div>
+<!-- Footer Section -->
+<footer class="bg-blue-900 text-white py-8">
+  <!-- Call to Action -->
+  <div class="text-center mb-8">
+    <h2 class="text-2xl font-bold">Want to Join us ?</h2>
+    <p class="mt-2">If you're interested in our Join us and wish to learn more, one of our advisors is excited to help.</p>
+    <button class="mt-4 px-6 py-2 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300">
+      Begin Now
+    </button>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm text-center md:text-left">
+    <!-- Logo or Brand Name -->
+    <div class="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
+      <h3 class="font-bold text-lg gold-gradient-text">We NAIT.</h3>
+
+    </div>
+ <!-- About Column -->
+ <div>
+  <div class="w-1/2"> <!-- Adjust width as needed -->
+    <h3 class="font-semibold border-b-2 border-gray-300 pb-2">Quick Links</h3>
+</div>
+<div class="mt-4">
+    <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Go to Links</button>
+</div>
+
+
+
+  <ul class="space-y-1 mt-2">
+    <li><a href="#home" class="hover:underline">Home</a></li>
+    <li><a href="#historySection" class="hover:underline">  About us</a></li>
+    <li><a href="#projects" class="hover:underline">Project</a></li>
+    <li><a href="#contact" class="hover:underline">Contact us</a></li>
+    <li><a href="#our team" class="hover:underline">Our Team</a></li>
+    <li><a href="#support" class="hover:underline">Support us</a></li>
+  </ul>
+</div>
+    <!-- Partnerships Column -->
+    <div>
+      <h3 class="font-semibold custom-underline">Top Skills</h3>
+
+      <ul class="space-y-1 mt-2">
+        <li><a href="#" class="hover:underline">Data Science  </a></li>
+        <li><a href="#" class="hover:underline">Android Development</a></li>
+        <li><a href="#" class="hover:underline">Web Design and Development</a></li>
+        <li><a href="#" class="hover:underline">Data Analysis </a></li>
+        <li><a href="#" class="hover:underline">Graphic Design</a></li>
+        <li><a href="#" class="hover:underline">Branding</a></li>
+        <li><a href="#" class="hover:underline">SociaL Medial Marketing</a></li>
+      </ul>
+    </div>
+
+    
+
+    <!-- Support Column -->
+    <div>
+      <h3 class="support-title font-semibold">SUPPORT</h3>
+
+      <style>
+        .support-title {
+          position: relative;
+          display: inline-block;
+          font-weight: 600;
+          text-decoration: underline;
+          text-decoration-color: rgb(243, 245, 244); /* Default color of the underline */
+          text-decoration-thickness: 2px; /* Set the thickness of the underline */
+          text-underline-offset: 3px; /* Adjust the distance of the underline from the text */
+        }
+      
+        .support-title:hover {
+          text-decoration-color: gold; /* Change the underline color to gold on hover */
+        }
+      </style>
+      
+      <ul class="space-y-1 mt-2">
+        <li><a href="#support" class="hover:underline">Support Request</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us Column -->
+    <div>
+      <h3 class="font-semibold">FOLLOW US</h3>
+      <div class="flex justify-center md:justify-start space-x-4 mt-2">
+        <a href="#" class="hover:underline"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:underline"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:underline"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:underline"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
+    <p>&copy; 2024 Network of Adventists in Tech (NAIT). All rights reserved.</p>
+    <a href="#" class="hover:underline">Privacy Policy</a>
+  </div>
+</footer>
+
+
+  <!-- Footer Section Starts -->
+ 
+</body>
+</html>
